@@ -1,0 +1,30 @@
+.local/
+dist/
+__pycache__/
+*.pyc
+*.egg-info/
+.DS_Store
+
+# 本机依赖、缓存及临时环境
+node_modules/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+coverage/
+htmlcov/
+*.tsbuildinfo
+.env
+.env.*
+!.env.example
+!.env.sample
+*.log
+*.tmp
+*.bak
+
+# 独立验收工程、制造输出及本机运行回执
+artifacts/
+docs/readonly-smoke.json
+docs/codex-discovery.json

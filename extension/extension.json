@@ -1,0 +1,95 @@
+{
+  "name": "easyeda-mcp",
+  "uuid": "b0f54bac131848dab885c8215a0ac81c",
+  "displayName": "EasyEDA MCP",
+  "description": "原理图、PCB、检查及制造导出的领域接口；通过嘉立创 EDA 内置 MCP 调用。",
+  "version": "0.1.0-dev.20261019.3",
+  "publisher": "PartMe.AI",
+  "engines": {
+    "eda": "^4.1.66"
+  },
+  "license": "Apache-2.0",
+  "categories": "Other",
+  "keywords": [
+    "MCP",
+    "AI",
+    "Schematic",
+    "PCB"
+  ],
+  "activationEvents": {
+    "onStartupFinished": true
+  },
+  "entry": "./dist/index",
+  "dependentExtensions": {},
+  "headerMenus": {
+    "home": [
+      {
+        "id": "easyeda-mcp-home",
+        "title": "EasyEDA MCP",
+        "menuItems": [
+          {
+            "id": "easyeda-mcp-home-panel",
+            "title": "打开面板",
+            "registerFn": "openPanel"
+          },
+          {
+            "id": "easyeda-mcp-home-enable",
+            "title": "开启工程修改",
+            "registerFn": "enableWrites"
+          },
+          {
+            "id": "easyeda-mcp-home-readonly",
+            "title": "恢复只读",
+            "registerFn": "disableWrites"
+          }
+        ]
+      }
+    ],
+    "sch": [
+      {
+        "id": "easyeda-mcp-sch",
+        "title": "EasyEDA MCP",
+        "menuItems": [
+          {
+            "id": "easyeda-mcp-sch-panel",
+            "title": "打开面板",
+            "registerFn": "openPanel"
+          },
+          {
+            "id": "easyeda-mcp-sch-enable",
+            "title": "开启工程修改",
+            "registerFn": "enableWrites"
+          },
+          {
+            "id": "easyeda-mcp-sch-readonly",
+            "title": "恢复只读",
+            "registerFn": "disableWrites"
+          }
+        ]
+      }
+    ],
+    "pcb": [
+      {
+        "id": "easyeda-mcp-pcb",
+        "title": "EasyEDA MCP",
+        "menuItems": [
+          {
+            "id": "easyeda-mcp-pcb-panel",
+            "title": "打开面板",
+            "registerFn": "openPanel"
+          },
+          {
+            "id": "easyeda-mcp-pcb-enable",
+            "title": "开启工程修改",
+            "registerFn": "enableWrites"
+          },
+          {
+            "id": "easyeda-mcp-pcb-readonly",
+            "title": "恢复只读",
+            "registerFn": "disableWrites"
+          }
+        ]
+      }
+    ]
+  }
+}

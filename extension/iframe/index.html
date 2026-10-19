@@ -1,0 +1,8 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>EasyEDA MCP</title><link rel="stylesheet" href="/iframe/panel.css"></head>
+<body><header><div><span class="eyebrow">嘉立创 EDA 专业版扩展</span><h1>EasyEDA MCP</h1><p>读取当前设计，让 AI 通过内置 MCP 调用领域操作。</p></div><span id="mode" class="badge">正在连接</span></header>
+<main><section class="card"><div class="row"><h2>当前工程</h2><button id="refresh">刷新工程</button></div><p id="project">尚未读取</p><dl><dt>活动文档</dt><dd id="document">—</dd><dt>工程 UUID</dt><dd id="project-id">—</dd><dt>文档 UUID</dt><dd id="document-id">—</dd></dl></section>
+<section class="card"><h2>检查与导出</h2><div class="actions"><button data-action="listComponents">读取器件</button><button data-action="getNetlist">读取网表</button><button data-action="checkDrc">运行 DRC</button><button data-format="gerber">导出 Gerber</button><button data-format="bom">导出 BOM</button><button data-format="pickAndPlace">导出贴片坐标</button></div><p class="hint">导出使用客户端保存窗口。取消保存不会被报告为文件已落盘。</p></section>
+<section class="card"><div class="row"><h2>工程修改</h2><button id="permission">开启修改</button></div><div class="actions"><button data-action="autoLayout" data-write>自动布局</button><button data-action="autoRoute" data-write>自动布线</button><button data-action="saveDocument" data-write>保存文档</button></div><p class="hint">默认只读。开启后仍由你或已授权的 AI 请求操作；布局、布线返回后需检查结果与 DRC。</p></section>
+<section class="card"><div class="row"><h2>操作结果</h2><span id="status" role="status">就绪</span></div><pre id="result" tabindex="0">操作结果会显示在这里。</pre></section>
+<footer>AI 接口：external.easyedaMcp.* · 原理图坐标 10mil / PCB 坐标 mil</footer></main><script type="module" src="/iframe/panel.js"></script></body></html>

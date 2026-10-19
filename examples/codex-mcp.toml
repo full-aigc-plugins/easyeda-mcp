@@ -1,0 +1,9 @@
+# 本地配置样例；替换为真实绝对路径后，在用户授权的宿主配置中使用。
+[mcp_servers.easyeda]
+command = "python3"
+args = ["-B", "/absolute/path/easyeda-mcp/scripts/serve.py"]
+startup_timeout_sec = 20
+tool_timeout_sec = 930
+# 已授权工程修改时在 args 添加 "--allow-write"。
+# 导出文件时在 args 添加 "--output-root", "/absolute/path/authorized-output"。
+# 仅使用高级工具时无需重复挂载同一个原生服务的另一个工具集。

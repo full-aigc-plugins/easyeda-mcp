@@ -1,0 +1,460 @@
+{
+  "apiPackage": "@jlceda/pro-api-types",
+  "version": "0.4.26",
+  "sha256": "7b2a0407ec516ea3f5021c8373d24cdced2a3946f990a4a524ec3ec394a1173f",
+  "queries": [
+    {
+      "query": "dmt_Board.getAllBoardsInfo",
+      "methods": [
+        {
+          "name": "getAllBoardsInfo",
+          "signature": "(): Promise<IDMT_BoardItem[]>",
+          "maturity": [
+            "public"
+          ],
+          "line": 287
+        }
+      ]
+    },
+    {
+      "query": "dmt_Pcb.getAllPcbsInfo",
+      "methods": [
+        {
+          "name": "getAllPcbsInfo",
+          "signature": "(): Promise<IDMT_PcbItem[]>",
+          "maturity": [
+            "public"
+          ],
+          "line": 1741
+        }
+      ]
+    },
+    {
+      "query": "dmt_Project.getCurrentProjectInfo",
+      "methods": [
+        {
+          "name": "getCurrentProjectInfo",
+          "signature": "(): Promise<IDMT_ProjectItem | undefined>",
+          "maturity": [
+            "public"
+          ],
+          "line": 2044
+        }
+      ]
+    },
+    {
+      "query": "dmt_Schematic.getAllSchematicPagesInfo",
+      "methods": [
+        {
+          "name": "getAllSchematicPagesInfo",
+          "signature": "(): Promise<IDMT_SchematicPageItem[]>",
+          "maturity": [
+            "beta"
+          ],
+          "line": 2406
+        }
+      ]
+    },
+    {
+      "query": "dmt_SelectControl.getCurrentDocumentInfo",
+      "methods": [
+        {
+          "name": "getCurrentDocumentInfo",
+          "signature": "(): Promise<IDMT_EditorDocumentItem | undefined>",
+          "maturity": [
+            "beta"
+          ],
+          "line": 2661
+        }
+      ]
+    },
+    {
+      "query": "lib_Device.getByLcscIds",
+      "methods": [
+        {
+          "name": "getByLcscIds",
+          "signature": "<T extends boolean>(lcscIds: string, libraryUuid?: string | undefined, allowMultiMatch?: T | undefined): Promise<T extends true ? ILIB_DeviceSearchItem | undefined : ILIB_DeviceSearchItem[]>",
+          "maturity": [
+            "beta"
+          ],
+          "line": 4068
+        },
+        {
+          "name": "getByLcscIds",
+          "signature": "(lcscIds: string[], libraryUuid?: string | undefined, allowMultiMatch?: boolean | undefined): Promise<ILIB_DeviceSearchItem[]>",
+          "maturity": [
+            "beta"
+          ],
+          "line": 4098
+        }
+      ]
+    },
+    {
+      "query": "lib_Device.search",
+      "methods": [
+        {
+          "name": "search",
+          "signature": "(key: string, libraryUuid?: string | undefined, classification?: ILIB_ClassificationIndex | string[] | undefined, symbolType?: ELIB_SymbolType | undefined, itemsOfPage?: number | undefined, page?: number | undefined): Promise<...>",
+          "maturity": [
+            "beta"
+          ],
+          "line": 4019
+        }
+      ]
+    },
+    {
+      "query": "pcb_Document.autoLayout",
+      "methods": [
+        {
+          "name": "autoLayout",
+          "signature": "(): Promise<IPCB_AutoLayoutResult>",
+          "maturity": [
+            "beta"
+          ],
+          "line": 6538
+        }
+      ]
+    },
+    {
+      "query": "pcb_Document.autoRouting",
+      "methods": [
+        {
+          "name": "autoRouting",
+          "signature": "(props?: IPCB_AutoRoutingProps | undefined): Promise<IPCB_AutoRoutingResult>",
+          "maturity": [
+            "beta"
+          ],
+          "line": 6527
+        }
+      ]
+    },
+    {
+      "query": "pcb_Document.save",
+      "methods": [
+        {
+          "name": "save",
+          "signature": "(): Promise<boolean>",
+          "maturity": [
+            "public"
+          ],
+          "line": 6108
+        }
+      ]
+    },
+    {
+      "query": "pcb_Drc.check",
+      "methods": [
+        {
+          "name": "check",
+          "signature": "(strict: boolean, userInterface: boolean, includeVerboseError: false): Promise<boolean>",
+          "maturity": [
+            "beta"
+          ],
+          "line": 6646
+        },
+        {
+          "name": "check",
+          "signature": "(strict: boolean, userInterface: boolean, includeVerboseError: true): Promise<any[]>",
+          "maturity": [
+            "beta"
+          ],
+          "line": 6656
+        }
+      ]
+    },
+    {
+      "query": "pcb_ManufactureData.getBomFile",
+      "methods": [
+        {
+          "name": "getBomFile",
+          "signature": "(fileName?: string | undefined, fileType?: \"xlsx\" | \"csv\" | undefined, template?: string | undefined, filterOptions?: { property: string; includeValue: string | boolean; }[] | undefined, statistics?: string[] | undefined, property?: string[] | undefined, columns?: IPCB_BomPropertiesTableColumns[] | undefined): Promise<...>",
+          "maturity": [
+            "beta"
+          ],
+          "line": 8892
+        }
+      ]
+    },
+    {
+      "query": "pcb_ManufactureData.getGerberFile",
+      "methods": [
+        {
+          "name": "getGerberFile",
+          "signature": "(fileName?: string | undefined, colorSilkscreen?: boolean | undefined, unit?: ESYS_Unit.MILLIMETER | ESYS_Unit.INCH | undefined, digitalFormat?: { integerNumber: number; decimalNumber: number; } | undefined, other?: { ...; } | undefined, layers?: { ...; }[] | undefined, objects?: (\"Pad\" | ... 14 more ... | \"TearDrop\")[] | undefined): Promise<...>",
+          "maturity": [
+            "beta"
+          ],
+          "line": 8657
+        }
+      ]
+    },
+    {
+      "query": "pcb_ManufactureData.getPickAndPlaceFile",
+      "methods": [
+        {
+          "name": "getPickAndPlaceFile",
+          "signature": "(fileName?: string | undefined, fileType?: \"xlsx\" | \"csv\" | undefined, unit?: ESYS_Unit.MILLIMETER | ESYS_Unit.MIL | undefined): Promise<File | undefined>",
+          "maturity": [
+            "beta"
+          ],
+          "line": 8753
+        }
+      ]
+    },
+    {
+      "query": "pcb_PrimitiveComponent.create",
+      "methods": [
+        {
+          "name": "create",
+          "signature": "(component: ILIB_DeviceItem | ILIB_DeviceSearchItem | ILIB_FootprintItem | ILIB_FootprintSearchItem | { ...; } | { ...; }, layer: TPCB_LayersOfComponent, x: number, y: number, rotation?: number | undefined, primitiveLock?: boolean | undefined): Promise<...>",
+          "maturity": [
+            "beta"
+          ],
+          "line": 19823
+        }
+      ]
+    },
+    {
+      "query": "pcb_PrimitiveComponent.getAll",
+      "methods": [
+        {
+          "name": "getAll",
+          "signature": "(layer?: TPCB_LayersOfComponent | undefined, primitiveLock?: boolean | undefined): Promise<IPCB_PrimitiveComponent[]>",
+          "maturity": [
+            "beta"
+          ],
+          "line": 20022
+        }
+      ]
+    },
+    {
+      "query": "sch_Document.save",
+      "methods": [
+        {
+          "name": "save",
+          "signature": "(): Promise<boolean>",
+          "maturity": [
+            "public"
+          ],
+          "line": 26006
+        }
+      ]
+    },
+    {
+      "query": "sch_Drc.check",
+      "methods": [
+        {
+          "name": "check",
+          "signature": "(strict: boolean, userInterface: boolean, includeVerboseError: false): Promise<boolean>",
+          "maturity": [
+            "beta"
+          ],
+          "line": 26220
+        },
+        {
+          "name": "check",
+          "signature": "(strict: boolean, userInterface: boolean, includeVerboseError: true): Promise<ISCH_DrcError[]>",
+          "maturity": [
+            "beta"
+          ],
+          "line": 26232
+        }
+      ]
+    },
+    {
+      "query": "sch_ManufactureData.getNetlistFile",
+      "methods": [
+        {
+          "name": "getNetlistFile",
+          "signature": "(fileName?: string | undefined, netlistType?: ESYS_NetlistType | undefined): Promise<File | undefined>",
+          "maturity": [
+            "beta"
+          ],
+          "line": 26633
+        }
+      ]
+    },
+    {
+      "query": "sch_PrimitiveComponent.create",
+      "methods": [
+        {
+          "name": "create",
+          "signature": "(component: ILIB_SymbolItem | ILIB_DeviceItem | ILIB_DeviceSearchItem | ILIB_SymbolSearchItem | { ...; } | { ...; }, x: number, y: number, subPartName?: string | undefined, rotation?: number | undefined, mirror?: boolean | undefined, addIntoBom?: boolean | undefined, addIntoPcb?: boolean | undefined): Promise<...>",
+          "maturity": [
+            "beta"
+          ],
+          "line": 33602
+        }
+      ]
+    },
+    {
+      "query": "sch_PrimitiveComponent.getAll",
+      "methods": [
+        {
+          "name": "getAll",
+          "signature": "(componentType?: ESCH_PrimitiveComponentType | undefined, allSchematicPages?: boolean | undefined): Promise<ISCH_PrimitiveComponent[]>",
+          "maturity": [
+            "beta"
+          ],
+          "line": 33941
+        }
+      ]
+    },
+    {
+      "query": "sch_PrimitiveComponent.getAllPinsByPrimitiveId",
+      "methods": [
+        {
+          "name": "getAllPinsByPrimitiveId",
+          "signature": "(primitiveId: string): Promise<ISCH_PrimitiveComponentPin[] | undefined>",
+          "maturity": [
+            "beta"
+          ],
+          "line": 33968
+        }
+      ]
+    },
+    {
+      "query": "sch_PrimitivePin.getAll",
+      "methods": [
+        {
+          "name": "getAll",
+          "signature": "(): Promise<ISCH_PrimitivePin[]>",
+          "maturity": [
+            "beta"
+          ],
+          "line": 34286
+        }
+      ]
+    },
+    {
+      "query": "sch_PrimitiveWire.create",
+      "methods": [
+        {
+          "name": "create",
+          "signature": "(line: number[] | number[][], net?: string | undefined, color?: string | null | undefined, lineWidth?: number | null | undefined, lineType?: ESCH_PrimitiveLineType | null | undefined): Promise<...>",
+          "maturity": [
+            "beta"
+          ],
+          "line": 37362
+        }
+      ]
+    },
+    {
+      "query": "sys_Dialog.showConfirmationMessage",
+      "methods": [
+        {
+          "name": "showConfirmationMessage",
+          "signature": "(content: string, title?: string | undefined, mainButtonTitle?: string | undefined, buttonTitle?: string | undefined, callbackFn?: ((mainButtonClicked: boolean) => void) | undefined): void",
+          "maturity": [
+            "public"
+          ],
+          "line": 39260
+        }
+      ]
+    },
+    {
+      "query": "sys_Dialog.showInformationMessage",
+      "methods": [
+        {
+          "name": "showInformationMessage",
+          "signature": "(content: string, title?: string | undefined, buttonTitle?: string | undefined): void",
+          "maturity": [
+            "public"
+          ],
+          "line": 39228
+        }
+      ]
+    },
+    {
+      "query": "sys_ExternalApi.register",
+      "methods": [
+        {
+          "name": "register",
+          "signature": "(namespace: string, apiName: string, callFn: (...args: any[]) => any, help?: ISYS_ExternalApiHelp | undefined): void",
+          "maturity": [
+            "public"
+          ],
+          "line": 39669
+        }
+      ]
+    },
+    {
+      "query": "sys_FileSystem.readFileFromFileSystem",
+      "methods": [
+        {
+          "name": "readFileFromFileSystem",
+          "signature": "(uri: string): Promise<File | undefined>",
+          "maturity": [
+            "beta"
+          ],
+          "line": 40277
+        }
+      ]
+    },
+    {
+      "query": "sys_FileSystem.saveFile",
+      "methods": [
+        {
+          "name": "saveFile",
+          "signature": "(fileData: Blob | File, fileName?: string | undefined): Promise<void>",
+          "maturity": [
+            "public"
+          ],
+          "line": 40265
+        }
+      ]
+    },
+    {
+      "query": "sys_FileSystem.saveFileToFileSystem",
+      "methods": [
+        {
+          "name": "saveFileToFileSystem",
+          "signature": "(uri: string, fileData: Blob | File, fileName?: string | undefined, force?: boolean | undefined): Promise<boolean>",
+          "maturity": [
+            "beta"
+          ],
+          "line": 40296
+        }
+      ]
+    },
+    {
+      "query": "sys_IFrame.openIFrame",
+      "methods": [
+        {
+          "name": "openIFrame",
+          "signature": "(htmlFileName: string, width?: number | undefined, height?: number | undefined, id?: string | undefined, props?: { maximizeButton?: boolean | undefined; minimizeButton?: boolean | undefined; ... 6 more ...; y?: number | undefined; } | undefined): Promise<...>",
+          "maturity": [
+            "beta"
+          ],
+          "line": 41441
+        }
+      ]
+    },
+    {
+      "query": "sys_MessageBus.rpcCall",
+      "methods": [
+        {
+          "name": "rpcCall",
+          "signature": "(topic: string, message?: any, timeout?: number | undefined): Promise<any>",
+          "maturity": [
+            "public"
+          ],
+          "line": 42966
+        }
+      ]
+    },
+    {
+      "query": "sys_MessageBus.rpcService",
+      "methods": [
+        {
+          "name": "rpcService",
+          "signature": "(topic: string, callbackFn: (...args: any[]) => any): void",
+          "maturity": [
+            "public"
+          ],
+          "line": 43012
+        }
+      ]
+    }
+  ]
+}

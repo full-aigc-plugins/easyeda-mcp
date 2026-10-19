@@ -1,0 +1,3 @@
+EasyEDA MCP
+
+原创领域适配使用 Apache-2.0。复用 easyeda-skills 原生诊断传输的固定快照，来源与摘要见 docs/transport-source.json。本包未复制嘉立创 EDA 引擎、官方 Bridge、第三方路由器或 Agent Runtime。EasyEDA/嘉立创 EDA 商标属于其权利人；本包不是官方发行产品。

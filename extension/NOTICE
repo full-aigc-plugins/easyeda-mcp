@@ -1,0 +1,3 @@
+EasyEDA MCP extension
+
+原创领域代码使用 Apache-2.0。构建工具 build/packaged.ts、build/utils.ts、config/esbuild.common.ts、config/esbuild.prod.ts 源自 easyeda/easyeda-api-sdk f83525eb54f86f131cf90780ed3fa0237dbb75aa，Apache-2.0。未捆绑嘉立创 EDA 引擎或第三方布线器。非官方发行产品。

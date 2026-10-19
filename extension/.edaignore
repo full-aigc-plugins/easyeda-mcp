@@ -1,0 +1,14 @@
+/node_modules/
+/src/
+/tests/
+/build/
+/config/
+/package.json
+/package-lock.json
+/tsconfig.json
+/.gitignore
+/.edaignore
+/AGENTS.md
+*.tsbuildinfo
+*.eext
+/scripts/

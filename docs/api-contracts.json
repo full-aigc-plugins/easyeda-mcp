@@ -1,0 +1,482 @@
+{
+  "clientVersion": "4.1.71.7a7261be",
+  "source": "native doc.api read-only",
+  "contracts": {
+    "DMT_Project.getCurrentProjectInfo": {
+      "title": "获取当前工程的详细属性",
+      "params": [],
+      "returns": {
+        "type": "IDMT_ProjectItem",
+        "description": "工程属性，如若为 `undefined` 则获取失败"
+      },
+      "isAsync": true
+    },
+    "DMT_SelectControl.getCurrentDocumentInfo": {
+      "title": "获取当前文档的属性",
+      "params": [],
+      "returns": {
+        "type": "IDMT_EditorDocumentItem",
+        "description": "文档类型、UUID、所属工程的 UUID、所属库的 UUID 组成的对象，如若为 `undefined` 则获取失败"
+      },
+      "isAsync": true
+    },
+    "DMT_Board.getAllBoardsInfo": {
+      "title": "获取工程内所有板子的详细属性",
+      "params": [],
+      "returns": {
+        "type": "Array<IDMT_BoardItem>",
+        "description": "所有板子的详细属性的数组"
+      },
+      "isAsync": true
+    },
+    "DMT_Schematic.getAllSchematicPagesInfo": {
+      "title": "获取工程内所有原理图图页的详细属性",
+      "params": [],
+      "returns": {
+        "type": "Array<IDMT_SchematicPageItem>",
+        "description": "所有原理图图页的详细属性的数组"
+      },
+      "isAsync": true
+    },
+    "DMT_Pcb.getAllPcbsInfo": {
+      "title": "获取工程内所有 PCB 的详细属性",
+      "params": [],
+      "returns": {
+        "type": "Array<IDMT_PcbItem>",
+        "description": "所有 PCB 的详细属性的数组"
+      },
+      "isAsync": true
+    },
+    "SCH_Netlist.getNetlist": {
+      "title": "获取网表",
+      "params": [
+        {
+          "name": "type",
+          "type": "ESYS_NetlistType",
+          "description": "网表格式",
+          "required": false
+        }
+      ],
+      "returns": {
+        "type": "string",
+        "description": "网表数据"
+      },
+      "isAsync": true,
+      "deprecated": "请使用 {@link SCH_ManufactureData.getNetlistFile} 替代"
+    },
+    "PCB_Net.getAllNetsName": {
+      "title": "获取所有网络的网络名称",
+      "params": [],
+      "returns": {
+        "type": "Array<string>",
+        "description": "网络名称数组"
+      },
+      "isAsync": true
+    },
+    "PCB_Drc.check": {
+      "title": "检查 DRC",
+      "params": [
+        {
+          "name": "strict",
+          "type": "boolean",
+          "description": "是否严格检查，当前 PCB 统一为严格检查模式",
+          "required": true
+        },
+        {
+          "name": "userInterface",
+          "type": "boolean",
+          "description": "是否显示 UI（呼出底部 DRC 窗口）",
+          "required": true
+        },
+        {
+          "name": "includeVerboseError",
+          "type": "false",
+          "description": "是否在返回值中包含详细错误信息，如若为 `true`，则返回值将始终为数组",
+          "required": true
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "description": "DRC 检查是否通过"
+      },
+      "isAsync": true
+    },
+    "SCH_Drc.check": {
+      "title": "检查 DRC",
+      "params": [
+        {
+          "name": "strict",
+          "type": "boolean",
+          "description": "是否严格检查，当前原理图统一为严格检查模式",
+          "required": true
+        },
+        {
+          "name": "userInterface",
+          "type": "boolean",
+          "description": "是否显示 UI（呼出底部 DRC 窗口）",
+          "required": true
+        },
+        {
+          "name": "includeVerboseError",
+          "type": "false",
+          "description": "是否在返回值中包含详细错误信息，如若为 `true`，则返回值将始终为数组",
+          "required": true
+        }
+      ],
+      "returns": {
+        "type": "boolean",
+        "description": "DRC 检查是否通过"
+      },
+      "isAsync": true
+    },
+    "PCB_Document.autoLayout": {
+      "title": "自动布局",
+      "params": [],
+      "returns": {
+        "type": "IPCB_AutoLayoutResult",
+        "description": "自动布局结果"
+      },
+      "isAsync": true
+    },
+    "PCB_Document.autoRouting": {
+      "title": "自动布线",
+      "params": [
+        {
+          "name": "props",
+          "type": "IPCB_AutoRoutingProps",
+          "description": "自动布线参数",
+          "required": false
+        }
+      ],
+      "returns": {
+        "type": "IPCB_AutoRoutingResult",
+        "description": "自动布线结果"
+      },
+      "isAsync": true
+    },
+    "PCB_ManufactureData.getGerberFile": {
+      "title": "获取 PCB 制版文件（Gerber）",
+      "params": [
+        {
+          "name": "fileName",
+          "type": "string",
+          "description": "文件名",
+          "required": false
+        },
+        {
+          "name": "colorSilkscreen",
+          "type": "boolean",
+          "description": "是否生成彩色丝印制造文件（嘉立创专用文件）",
+          "required": false
+        },
+        {
+          "name": "unit",
+          "type": "\"mm\" | \"inch\"",
+          "description": "单位",
+          "required": false
+        },
+        {
+          "name": "digitalFormat",
+          "type": "{ integerNumber: number; decimalNumber: number }",
+          "description": "数字格式，默认 `4:5`；使用英制（`ESYS_Unit.INCH`）时建议 `3:6`",
+          "required": false
+        },
+        {
+          "name": "other",
+          "type": "{ metallicDrillingInformation: boolean; nonMetallicDrillingInformation: boolean; drillTable: boolean; flyingProbeTestingFile: boolean }",
+          "description": "其它",
+          "required": false
+        },
+        {
+          "name": "layers",
+          "type": "Array<{ layerId: EPCB_LayerId; isMirror: boolean }>",
+          "description": "导出层，默认则与编辑器一键导出一致（板内真实使用的层 + 钻孔图层）",
+          "required": false
+        },
+        {
+          "name": "objects",
+          "type": "Array<\"Pad\" | \"Via\" | \"Track\" | \"Text\" | \"Image\" | \"Dimension\" | \"BoardOutline\" | \"BoardCutout\" | \"CopperFilled\" | \"SolidRegion\" | \"FPCStiffener\" | \"Line\" | \"PlaneZone\" | \"ComponentProperty\" | \"ComponentSilkscreen\" | \"TearDrop\">",
+          "description": "导出对象，默认则按照嘉立创生产需求导出",
+          "required": false
+        }
+      ],
+      "returns": {
+        "type": "File | undefined",
+        "description": "PCB 制版文件数据"
+      },
+      "isAsync": true
+    },
+    "PCB_ManufactureData.getBomFile": {
+      "title": "获取 BOM 文件",
+      "params": [
+        {
+          "name": "fileName",
+          "type": "string",
+          "description": "文件名",
+          "required": false
+        },
+        {
+          "name": "fileType",
+          "type": "\"xlsx\" | \"csv\"",
+          "description": "文件类型",
+          "required": false
+        },
+        {
+          "name": "template",
+          "type": "string",
+          "description": "模板名称",
+          "required": false
+        },
+        {
+          "name": "filterOptions",
+          "type": "Array<{ property: string; includeValue: string | false | true }>",
+          "description": "过滤规则，仅应包含需要启用的规则，`property` 为规则名称，`includeValue` 为匹配的值",
+          "required": false
+        },
+        {
+          "name": "statistics",
+          "type": "Array<string>",
+          "description": "统计，包含所有需要启用的统计项的名称",
+          "required": false
+        },
+        {
+          "name": "property",
+          "type": "Array<string>",
+          "description": "属性，包含所有需要启用的属性的名称",
+          "required": false
+        },
+        {
+          "name": "columns",
+          "type": "Array<IPCB_BomPropertiesTableColumns>",
+          "description": "列的属性及排序，`title`、`sort`、`group`、`orderWeight` 不传入则取默认值，`null` 代表 **无** 或 **空**",
+          "required": false
+        }
+      ],
+      "returns": {
+        "type": "File | undefined",
+        "description": "BOM 文件数据"
+      },
+      "isAsync": true
+    },
+    "PCB_ManufactureData.getPickAndPlaceFile": {
+      "title": "获取坐标文件（PickAndPlace）",
+      "params": [
+        {
+          "name": "fileName",
+          "type": "string",
+          "description": "文件名",
+          "required": false
+        },
+        {
+          "name": "fileType",
+          "type": "\"xlsx\" | \"csv\"",
+          "description": "文件类型",
+          "required": false
+        },
+        {
+          "name": "unit",
+          "type": "\"mm\" | \"mil\"",
+          "description": "单位",
+          "required": false
+        }
+      ],
+      "returns": {
+        "type": "File | undefined",
+        "description": "坐标文件数据"
+      },
+      "isAsync": true
+    },
+    "SCH_PrimitiveComponent.getAll": {
+      "title": "获取所有器件",
+      "params": [
+        {
+          "name": "componentType",
+          "type": "ESCH_PrimitiveComponentType",
+          "description": "器件类型",
+          "required": false
+        },
+        {
+          "name": "allSchematicPages",
+          "type": "boolean",
+          "description": "是否获取所有原理图图页的器件",
+          "required": false
+        }
+      ],
+      "returns": {
+        "type": "Array<ISCH_PrimitiveComponent>",
+        "description": "器件图元对象数组"
+      },
+      "isAsync": true
+    },
+    "PCB_PrimitiveComponent.getAll": {
+      "title": "获取所有器件",
+      "params": [
+        {
+          "name": "layer",
+          "type": "TPCB_LayersOfComponent",
+          "description": "层",
+          "required": false
+        },
+        {
+          "name": "primitiveLock",
+          "type": "boolean",
+          "description": "是否锁定",
+          "required": false
+        }
+      ],
+      "returns": {
+        "type": "Array<IPCB_PrimitiveComponent>",
+        "description": "器件图元对象数组"
+      },
+      "isAsync": true
+    },
+    "SCH_ManufactureData.getNetlistFile": {
+      "title": "获取网表文件（Netlist）",
+      "params": [
+        {
+          "name": "fileName",
+          "type": "string",
+          "description": "文件名",
+          "required": false
+        },
+        {
+          "name": "netlistType",
+          "type": "ESYS_NetlistType",
+          "description": "网表类型",
+          "required": false
+        }
+      ],
+      "returns": {
+        "type": "File | undefined",
+        "description": "网表文件数据"
+      },
+      "isAsync": true
+    },
+    "SCH_PrimitiveComponent.create": {
+      "title": "创建器件",
+      "params": [
+        {
+          "name": "component",
+          "type": "{ libraryType?: \"3\"; libraryUuid: string; uuid: string } | ILIB_DeviceItem | ILIB_DeviceSearchItem | { libraryType: \"2\"; libraryUuid: string; uuid: string } | ILIB_SymbolItem | ILIB_SymbolSearchItem",
+          "description": "关联库器件",
+          "required": true
+        },
+        {
+          "name": "x",
+          "type": "number",
+          "description": "坐标 X",
+          "required": true
+        },
+        {
+          "name": "y",
+          "type": "number",
+          "description": "坐标 Y",
+          "required": true
+        },
+        {
+          "name": "subPartName",
+          "type": "string",
+          "description": "子部件名称",
+          "required": false
+        },
+        {
+          "name": "rotation",
+          "type": "number",
+          "description": "旋转角度",
+          "required": false
+        },
+        {
+          "name": "mirror",
+          "type": "boolean",
+          "description": "是否镜像",
+          "required": false
+        },
+        {
+          "name": "addIntoBom",
+          "type": "boolean",
+          "description": "是否加入 BOM",
+          "required": false
+        },
+        {
+          "name": "addIntoPcb",
+          "type": "boolean",
+          "description": "是否转到 PCB",
+          "required": false
+        }
+      ],
+      "returns": {
+        "type": "ISCH_PrimitiveComponent",
+        "description": "器件图元对象"
+      },
+      "isAsync": true
+    },
+    "PCB_PrimitiveComponent.create": {
+      "title": "创建器件",
+      "params": [
+        {
+          "name": "component",
+          "type": "{ libraryUuid: string; uuid: string } | ILIB_DeviceItem | ILIB_DeviceSearchItem | { libraryType: \"4\"; libraryUuid: string; uuid: string } | ILIB_FootprintItem | ILIB_FootprintSearchItem",
+          "description": "关联库器件",
+          "required": true
+        },
+        {
+          "name": "layer",
+          "type": "TPCB_LayersOfComponent",
+          "description": "层",
+          "required": true
+        },
+        {
+          "name": "x",
+          "type": "number",
+          "description": "坐标 X",
+          "required": true
+        },
+        {
+          "name": "y",
+          "type": "number",
+          "description": "坐标 Y",
+          "required": true
+        },
+        {
+          "name": "rotation",
+          "type": "number",
+          "description": "旋转角度",
+          "required": false
+        },
+        {
+          "name": "primitiveLock",
+          "type": "boolean",
+          "description": "是否锁定",
+          "required": false
+        }
+      ],
+      "returns": {
+        "type": "IPCB_PrimitiveComponent",
+        "description": "器件图元对象"
+      },
+      "isAsync": true
+    },
+    "ISCH_PrimitiveComponent.getState_PrimitiveId": {
+      "title": "获取属性状态：图元 ID",
+      "params": [],
+      "returns": {
+        "type": "string",
+        "description": "图元 ID"
+      },
+      "isAsync": false
+    },
+    "IPCB_PrimitiveComponent.getState_X": {
+      "title": "获取属性状态：坐标 X",
+      "params": [],
+      "returns": {
+        "type": "number",
+        "description": "坐标 X"
+      },
+      "isAsync": false
+    },
+    "PCB_Document.None": {
+      "title": "PCB & 封装 / 文档操作类",
+      "callPath": "pcb_Document"
+    }
+  }
+}

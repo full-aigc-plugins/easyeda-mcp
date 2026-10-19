@@ -1,0 +1,15 @@
+{
+  "repository": "easyeda/easyeda-api-sdk",
+  "revision": "f83525eb54f86f131cf90780ed3fa0237dbb75aa",
+  "sdkVersion": "1.6.29",
+  "apiTypes": "0.4.26",
+  "typescript": "5.9.3",
+  "declarationSha256": "7b2a0407ec516ea3f5021c8373d24cdced2a3946f990a4a524ec3ec394a1173f",
+  "buildFiles": {
+    "build/packaged.ts": "c28f6dd4c7b777cd8e1bc83edcb640b3903a980cb8476b1961ffd724cf7d27ce",
+    "build/utils.ts": "2b6a3b52b0b2b0381fac0b9b68ce00ff05643753c76c4a157304b3009e76beb7",
+    "config/esbuild.common.ts": "7852b30c09482327a4dbc594a13853c15c26f7fe97cd4ed781d503c605d27075",
+    "config/esbuild.prod.ts": "89f6dab4af6cd2c22efe8c9afb6d41bd0624cc48cfef29e893b52f724043c801"
+  },
+  "modifications": "使用 Node 24 运行官方 TS 构建文件；排除源码、开发依赖与测试；src 与界面为本项目实现"
+}

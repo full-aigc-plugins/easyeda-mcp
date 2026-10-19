@@ -1,0 +1,24 @@
+{
+  "name": "easyeda-mcp-extension",
+  "version": "0.1.0-dev.20261019.3",
+  "private": true,
+  "type": "module",
+  "license": "Apache-2.0",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "compile": "node config/esbuild.prod.ts",
+    "build": "npm run typecheck && npm run compile && node build/packaged.ts",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "devDependencies": {
+    "@jlceda/pro-api-types": "0.4.26",
+    "typescript": "5.9.3",
+    "esbuild": "0.24.2",
+    "fs-extra": "11.3.2",
+    "ignore": "7.0.5",
+    "jszip": "3.10.1"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

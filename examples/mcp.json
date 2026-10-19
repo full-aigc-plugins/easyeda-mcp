@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "easyeda": {
+      "command": "python3",
+      "args": [
+        "-B",
+        "/absolute/path/easyeda-mcp/scripts/serve.py"
+      ]
+    }
+  }
+}

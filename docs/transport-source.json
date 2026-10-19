@@ -1,0 +1,7 @@
+{
+  "sourcePackage": "full-aigc-skills/easyeda-skills",
+  "path": "skills/easyeda-mcp-setup/scripts/native_mcp.py",
+  "version": "0.1.0-dev.20261019.1",
+  "sha256": "7ed4fcd3362089f6fbb4265307d0df829ba80bca46f4d4c5209a3e675cf1e692",
+  "role": "原生传输快照；独立运行，不依赖兄弟目录"
+}
