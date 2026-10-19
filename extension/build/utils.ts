@@ -74,6 +74,8 @@ export async function packageExtension(rootDir: string, outputPath: string): Pro
 	}
 
 	const nodeStream = zip.generateNodeStream({ type: 'nodebuffer', streamFiles: true, compression: 'DEFLATE', compressionOptions: { level: 9 } });
+	// 全新检出不会保留被忽略的空目录，打包时显式创建输出目录。
+	await fs.ensureDir(path.dirname(outputPath));
 	const writeStream = fs.createWriteStream(outputPath);
 
 	return new Promise((resolve, reject) => {
